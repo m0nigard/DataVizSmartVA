@@ -1,1 +1,110 @@
-[{"id":1,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5174","Latitude":"55.825303","Longitude":"14.08879","Floodgrade":"HIGH"},{"id":2,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5207","Latitude":"55.827289","Longitude":"14.088407","Floodgrade":"LOWasdsad"},{"id":3,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB priv 472","Latitude":"55.82810659","Longitude":"14.09351528","Floodgrade":"gihj"},{"id":4,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5106","Latitude":"55.829094","Longitude":"14.082728","Floodgrade":"LOWasd"},{"id":5,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5109","Latitude":"55.829171","Longitude":"14.083132","Floodgrade":"LOWasdsad"},{"id":6,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5613","Latitude":"55.8354241","Longitude":"14.09122056","Floodgrade":"LOWasdsad"},{"id":7,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5708","Latitude":"55.837174","Longitude":"14.090763","Floodgrade":"LOWasdsad"},{"id":8,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5686","Latitude":"55.838006","Longitude":"14.087281","Floodgrade":"LOWasdsad"},{"id":9,"Group":"Specifik","Type":"Flödesbrunn","SensorName":"DNB 5644","Latitude":"55.84007","Longitude":"14.095168","Floodgrade":"LOWasdsad"}]
+[
+  {
+    "id": 1,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5174",
+    "Latitude": "55.825303",
+    "Longitude": "14.08879",
+    "Floodgrade": "High",
+    "FloodColor": "red",
+    "MarkerSize": 50,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 2,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5207",
+    "Latitude": "55.827289",
+    "Longitude": "14.088407",
+    "Floodgrade": "Low",
+    "FloodColor": "yellow",
+    "MarkerSize": 25,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 3,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB priv 472",
+    "Latitude": "55.82810659",
+    "Longitude": "14.09351528",
+    "Floodgrade": "Medium",
+    "FloodColor": "orange",
+    "MarkerSize": 35,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 4,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5106",
+    "Latitude": "55.829094",
+    "Longitude": "14.082728",
+    "Floodgrade": "None",
+    "FloodColor": "green",
+    "MarkerSize": 15,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 5,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5109",
+    "Latitude": "55.829171",
+    "Longitude": "14.083132",
+    "Floodgrade": "High",
+    "FloodColor": "red",
+    "MarkerSize": 50,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 6,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5613",
+    "Latitude": "55.8354241",
+    "Longitude": "14.09122056",
+    "Floodgrade": "Low",
+    "FloodColor": "yellow",
+    "MarkerSize": 25,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 7,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5708",
+    "Latitude": "55.837174",
+    "Longitude": "14.090763",
+    "Floodgrade": "Medium",
+    "FloodColor": "orange",
+    "MarkerSize": 35,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 8,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5686",
+    "Latitude": "55.838006",
+    "Longitude": "14.087281",
+    "Floodgrade": "High",
+    "FloodColor": "red",
+    "MarkerSize": 50,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  },
+  {
+    "id": 9,
+    "Group": "Specifik",
+    "Type": "Flödesbrunn",
+    "SensorName": "DNB 5644",
+    "Latitude": "55.84007",
+    "Longitude": "14.095168",
+    "Floodgrade": "Medium",
+    "FloodColor": "orange",
+    "MarkerSize": 35,
+    "LatestUpdate": "2022/05/05 20:13:25"
+  }
+]
