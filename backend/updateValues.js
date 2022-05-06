@@ -19,6 +19,10 @@ ws.addEventListener('close', function (event) {
   console.log('disconnected')
 })
 
+// To send data
+//ws.send('hello')
+// Only text formats allowed to send, if data is in json format use
+//ws.send(JSON.stringify(object))
 
 function readSensorJSON() {
   const fs = require('fs');
@@ -56,16 +60,16 @@ function updateSensorValues(fetchedData, fetchedData2) {
         res[i].Floodgrade = res2[j].floodGrade
         res[i].LatestUpdate = getDateTime();
         if (res2[j].floodGrade === "High") {
-          res[i].FloodColor = "red";
+          res[i].FloodColor = [255, 0, 0, 0.5];
           res[i].MarkerSize = 50;
         } else if (res2[j].floodGrade === "Medium") {
-          res[i].FloodColor = "orange";
+          res[i].FloodColor = [227, 139, 79, 0.5];
           res[i].MarkerSize = 35;
         } else if (res2[j].floodGrade === "Low") {
-          res[i].FloodColor = "yellow";
+          res[i].FloodColor = [255, 255, 0, 0.5];
           res[i].MarkerSize = 25;
         } else {
-          res[i].FloodColor = "green";
+          res[i].FloodColor = [0, 204, 0, 0.5];
           res[i].MarkerSize = 15;
         }
       }

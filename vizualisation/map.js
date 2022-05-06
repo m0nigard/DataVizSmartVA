@@ -39,6 +39,7 @@ require([
       };
 
 
+      console.log(sensor.FloodColor);
       var simpleMarkerSymbol = {
         type: "simple-marker",
         color: sensor.FloodColor,
