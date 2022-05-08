@@ -1,6 +1,4 @@
 import asyncio
-import datetime
-import random
 import websockets
 import json
 
@@ -10,41 +8,17 @@ async def time(websocket, path):
 
         data = [
             {
-                "sensorName": "DNB 5174",
-                "floodGrade": "High"
-            },
-            {
-                "sensorName": "DNB 5207",
-                "floodGrade": "Low"
-            },
-            {
-                "sensorName": "DNB priv 472",
+                "sensorName": "VMP71",
                 "floodGrade": "Medium"
             },
             {
-                "sensorName": "DNB 5106",
-                "floodGrade": "None"
-            },
-            {
-                "sensorName": "DNB 5109",
+                "sensorName": "VMP70",
                 "floodGrade": "High"
             },
             {
-                "sensorName": "DNB 5613",
-                "floodGrade": "Low"
-            },
-            {
-                "sensorName": "DNB 5708",
+                "sensorName": "VMP85",
                 "floodGrade": "Medium"
             },
-            {
-                "sensorName": "DNB 5686",
-                "floodGrade": "High"
-            },
-            {
-                "sensorName": "DNB 5644",
-                "floodGrade": "Medium"
-            }
         ]
         await websocket.send(json.dumps(data))
         await asyncio.sleep(10)
