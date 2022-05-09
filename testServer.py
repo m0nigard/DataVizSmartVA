@@ -9,15 +9,15 @@ async def time(websocket, path):
         data = [
             {
                 "sensorName": "VMP71",
-                "floodGrade": "Medium"
+                "floodGrade": "Hög"
             },
             {
                 "sensorName": "VMP70",
-                "floodGrade": "High"
+                "floodGrade": "Mellan"
             },
             {
                 "sensorName": "VMP85",
-                "floodGrade": "Medium"
+                "floodGrade": "Ingen"
             },
         ]
         await websocket.send(json.dumps(data))

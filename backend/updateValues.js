@@ -1,3 +1,4 @@
+const { get } = require('express/lib/response');
 const WebSocket = require('ws');
 
 let ws = new WebSocket("ws://127.0.0.1:5678/")
@@ -19,10 +20,6 @@ ws.addEventListener('close', function (event) {
   console.log('disconnected')
 })
 
-// To send data
-//ws.send('hello')
-// Only text formats allowed to send, if data is in json format use
-//ws.send(JSON.stringify(object))
 
 function readSensorJSON() {
   const fs = require('fs');
@@ -54,18 +51,38 @@ function updateSensorValues(fetchedData, fetchedData2) {
     res2.push(obj2[i]);
   }
 
+  
+ 
+
   for (var i = 0; i < res.length; i++) {
     for (var j = 0; j < res2.length; j++) {
       if (res[i].SensorName === res2[j].sensorName) {
         res[i].Floodgrade = res2[j].floodGrade
         res[i].LatestUpdate = getDateTime();
-        if (res2[j].floodGrade === "High") {
+
+        var match1 = getDateTime();
+        var match2 = res[i].LatestUpdate;
+        var splitMatch1 = match1.split(",");
+        var splitMatch2 = match2.split(",");
+        console.log(splitMatch1[0])
+        console.log(splitMatch2[0])
+
+        if (splitMatch1[0] !== "2022/05/10") {
+          if (res[i].FloodingArray.length > 6) {
+            res[i].FloodingArray.shift();
+            res[i].FloodingArray.push(res2[j].floodGrade);
+          } else {
+            res[i].FloodingArray.push(res2[j].floodGrade);
+          }
+        }
+
+        if (res2[j].floodGrade === "Hög") {
           res[i].FloodColor = [255, 0, 0, 0.5];
           res[i].MarkerSize = 50;
-        } else if (res2[j].floodGrade === "Medium") {
+        } else if (res2[j].floodGrade === "Mellan") {
           res[i].FloodColor = [227, 139, 79, 0.5];
           res[i].MarkerSize = 35;
-        } else if (res2[j].floodGrade === "Low") {
+        } else if (res2[j].floodGrade === "Låg") {
           res[i].FloodColor = [255, 255, 0, 0.5];
           res[i].MarkerSize = 25;
         } else {
@@ -86,7 +103,6 @@ function updateSensorValues(fetchedData, fetchedData2) {
     console.log("JSON data is saved.");
   });
 
-  //console.log(res);
 }
 
 async function fetchFloodingValues(orgSensorValues) {
@@ -100,8 +116,6 @@ async function fetchFloodingValues(orgSensorValues) {
     for (var i in user) {
       res.push(user[i]);
     }
-
-    //console.log(res, orgSensorValues)
     updateSensorValues(orgSensorValues, res);
   })
 }
@@ -113,12 +127,8 @@ async function updateFloodingValues(newFloodingValues) {
   for (var i in obj) {
     res.push(obj[i]);
   }
-  //console.log(res);
-
-  //console.log(res);
   const fs = require('fs');
   const updatedValues = JSON.stringify(res);
-  // write JSON string to a file
   fs.writeFile('opcodeTest.json', updatedValues, (err) => {
     if (err) {
       throw err;
@@ -151,6 +161,6 @@ function getDateTime() {
   if (second.toString().length == 1) {
     second = '0' + second;
   }
-  var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+  var dateTime = year + '/' + month + '/' + day + ', ' + hour + ':' + minute + ':' + second;
   return dateTime;
 }

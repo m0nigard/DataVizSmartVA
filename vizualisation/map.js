@@ -23,8 +23,6 @@ require([
     container: "viewDiv"
   });
 
-  // 55.833811, 14.090508
-
   const graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);
 
@@ -50,16 +48,44 @@ require([
         }
       };
 
+      let highcount = 0;
+      let mediumcount = 0;
+      let lowcount = 0;
+      let nonecount = 0;
+
+      for (var i = 0; i < sensor.FloodingArray.length; i++) {
+        if(sensor.FloodingArray[i] === "Hög"){
+          highcount ++;
+        } else if(sensor.FloodingArray[i] = "Medel"){
+          mediumcount ++;
+        } else if(sensor.FloodingArray[i] = "Låg"){
+          lowcount ++;
+        } else {
+          nonecount ++;
+        }
+        
+      }
+
+
       const popupTemplate = {
         title: "{Name}",
-        content: "Sensorname: <b>{Sensorname}</b>" + "<br> Floodgrade: <b>{Floodgrade}</b>"
-          + "<br> Last updated: <b>{Updated}</b>"
+        content: "Sensornamn: <b>{Sensorname}</b>" + "<br> Översvämningsrisk: <b>{Floodgrade}</b>"
+          + "<br> Senast uppdaterad: <b>{Updated}</b>" + "<br>" +
+          "<br> <b> Nedan kan du avläsa de senaste sju dagarnas flödesprognos för denna sensorn, om flödesrisken har varit hög de senaste dagarna kan det leda till en större översvämning. </b> <br>" +
+          "<br> Hög översvämningsrisk: <b>{HistoricFloodGradesHigh}</b> dagar." + "<br> Medel översvämningsrisk: <b>{HistoricFloodGradesMedium}</b> dagar." + "<br> Låg översvämningsrisk: <b>{HistoricFloodGradesLow}</b> dagar." + 
+          "<br> Ingen översvämningsrisk: <b>{HistoricFloodGradesNone}</b> dagar."
       }
+
       const attributes = {
         Name: sensor.Type,
         Sensorname: sensor.SensorName,
         Floodgrade: sensor.Floodgrade,
-        Updated: sensor.LatestUpdate
+        Updated: sensor.LatestUpdate,
+        HistoricFloodGradesHigh: highcount,
+        HistoricFloodGradesMedium: mediumcount,
+        HistoricFloodGradesLow: lowcount,
+        HistoricFloodGradesNone: nonecount,
+       
       }
 
 

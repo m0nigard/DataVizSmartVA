@@ -6,15 +6,24 @@
         "SensorName": "VMP70",
         "Latitude": "55.83693",
         "Longitude": "14.09068",
-        "Floodgrade": "High",
+        "Floodgrade": "Mellan",
         "FloodColor": [
-            255,
-            0,
-            0,
+            227,
+            139,
+            79,
             0.5
         ],
-        "MarkerSize": 50,
-        "LatestUpdate": "2022/05/06 14:18:15"
+        "MarkerSize": 35,
+        "LatestUpdate": "2022/05/09, 22:22:43",
+        "FloodingArray": [
+            "Mellan",
+            "Mellan",
+            "Mellan",
+            "Mellan",
+            "Mellan",
+            "Mellan",
+            "Mellan"
+        ]
     },
     {
         "id": 2,
@@ -23,15 +32,24 @@
         "SensorName": "VMP71",
         "Latitude": "55.82728",
         "Longitude": " 14.09524",
-        "Floodgrade": "Medium",
+        "Floodgrade": "Hög",
         "FloodColor": [
-            227,
-            139,
-            79,
+            255,
+            0,
+            0,
             0.5
         ],
-        "MarkerSize": 35,
-        "LatestUpdate": "2022/05/06 14:18:15"
+        "MarkerSize": 50,
+        "LatestUpdate": "2022/05/09, 22:22:43",
+        "FloodingArray": [
+            "Hög",
+            "Hög",
+            "Hög",
+            "Hög",
+            "Hög",
+            "Hög",
+            "Hög"
+        ]
     },
     {
         "id": 3,
@@ -40,14 +58,23 @@
         "SensorName": "VMP85",
         "Latitude": "55.82704426",
         "Longitude": "14.09317322",
-        "Floodgrade": "Medium",
+        "Floodgrade": "Ingen",
         "FloodColor": [
-            227,
-            139,
-            79,
+            0,
+            204,
+            0,
             0.5
         ],
-        "MarkerSize": 35,
-        "LatestUpdate": "2022/05/06 14:18:15"
+        "MarkerSize": 15,
+        "LatestUpdate": "2022/05/09, 22:22:43",
+        "FloodingArray": [
+            "Hög",
+            "Hög",
+            "Ingen",
+            "Ingen",
+            "Ingen",
+            "Ingen",
+            "Ingen"
+        ]
     }
 ]
