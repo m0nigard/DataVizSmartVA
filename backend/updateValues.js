@@ -64,8 +64,8 @@ function updateSensorValues(fetchedData, fetchedData2) {
         var match2 = res[i].LatestUpdate;
         var splitMatch1 = match1.split(",");
         var splitMatch2 = match2.split(",");
-        console.log(splitMatch1[0])
-        console.log(splitMatch2[0])
+        //console.log(splitMatch1[0])
+        //console.log(splitMatch2[0])
 
         if (splitMatch1[0] !== "2022/05/10") {
           if (res[i].FloodingArray.length > 6) {
@@ -76,17 +76,20 @@ function updateSensorValues(fetchedData, fetchedData2) {
           }
         }
 
+
+        console.log(res2[j].floodGrade)
+
         if (res2[j].floodGrade === "Hög") {
-          res[i].FloodColor = [255, 0, 0, 0.5];
+          res[i].FloodColor = [255, 0, 0, 0.5]; // RÖD
           res[i].MarkerSize = 50;
         } else if (res2[j].floodGrade === "Mellan") {
-          res[i].FloodColor = [227, 139, 79, 0.5];
+          res[i].FloodColor = [227, 139, 79, 0.5]; // ORANGE
           res[i].MarkerSize = 35;
         } else if (res2[j].floodGrade === "Låg") {
-          res[i].FloodColor = [255, 255, 0, 0.5];
+          res[i].FloodColor = [255, 255, 0, 0.5]; // GUL
           res[i].MarkerSize = 25;
         } else {
-          res[i].FloodColor = [0, 204, 0, 0.5];
+          res[i].FloodColor = [0, 204, 0, 0.5]; // GRÖN
           res[i].MarkerSize = 15;
         }
       }
@@ -100,7 +103,7 @@ function updateSensorValues(fetchedData, fetchedData2) {
     if (err) {
       throw err;
     }
-    console.log("JSON data is saved.");
+    //console.log("JSON data is saved.");
   });
 
 }
@@ -133,7 +136,7 @@ async function updateFloodingValues(newFloodingValues) {
     if (err) {
       throw err;
     }
-    console.log("JSON data is saved.");
+    //.log("JSON data is saved.");
     readSensorJSON();
   });
 }
